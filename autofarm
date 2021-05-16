@@ -60,6 +60,7 @@ function TPReturner()
     end
 end
 
+local iterations = 0 --something i added myself
 function Teleport()
     while wait() do
         pcall(function()
@@ -68,6 +69,14 @@ function Teleport()
 	    	print"returning tp id"
                 TPReturner()
             end
+	    iterations = iterations + 1
+	    if iterations > 25000 then
+	    	local delFile = pcall(function()
+		    delfile("NotSameServers.json")
+		    AllIDs = {}
+		    table.insert(AllIDs, actualHour)
+		end)
+	    end
         end)
     end
 end
