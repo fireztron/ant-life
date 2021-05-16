@@ -1,0 +1,2 @@
+--BECAUSE I CHANGED THE FILE NAME TO .lua
+loadstring(game:HttpGet("https://raw.githubusercontent.com/fireztron/ant-life/main/autofarm.lua"))() --autofarm (forgot to mention throw this into ur autoexecute folder)
