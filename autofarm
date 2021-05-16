@@ -84,7 +84,7 @@ end
 --// AUTO KICK WHEN MOD JOINS
 
 game.Players.PlayerAdded:Connect(function(player)
-	pcall(function()
+	spawn(function()
 		if player:GetRankInGroup(4525406) > 50 then  --idk mod rank number so i just put 50
 			Teleport()
 		end
@@ -92,7 +92,7 @@ game.Players.PlayerAdded:Connect(function(player)
 end)
 
 for i,v in pairs(game.Players:GetPlayers()) do
-	pcall(function()
+	spawn(function()
 		if v:GetRankInGroup(4525406) > 50 then --idk mod rank number so i just put 50
 			Teleport()
 		end
