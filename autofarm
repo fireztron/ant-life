@@ -65,6 +65,7 @@ function Teleport()
         pcall(function()
             TPReturner()
             if foundAnything ~= "" then
+	    	print"returning tp id"
                 TPReturner()
             end
         end)
