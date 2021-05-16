@@ -294,7 +294,10 @@ LP.Character.Humanoid:ChangeState(11)
 --// TELEPORTING LOOP
 
 while numOfChars() > 1 and isAlive(LocalPlayer) do --one to account for black carpenter queen
-    print(numOfChars())
+    warn("---")
+    for i,v in pairs(numOfChars()) do
+    	print(v)
+    end
     local LPChar = LocalPlayer.Character
     for plr, char in pairs(getChars(true)) do
         while isAlive(plr) and isAlive(LocalPlayer) and not char:IsDescendantOf(workspace.Carcasses) and char.Parent and char.Parent.Name ~= "Larvae" and LPChar.Parent and LPChar.Parent.Name ~= "Larvae" and char.Head.Color ~= LPChar.Head.Color do
