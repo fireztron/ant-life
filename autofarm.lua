@@ -226,6 +226,8 @@ local function setCam()
         game:GetService("Players").LocalPlayer.PlayerGui.Menu.Enabled = false
     end)
 end
+	
+--// TELEPORT IF IT TAKES TOO LONG TO GET SPAWNED IN
 
 local spawnedIn = false
 spawn(function()
@@ -311,6 +313,14 @@ end)
 
 --]]
 
+local cocooned = false
+spawn(function()
+    wait(30)
+    if cocooned == false then
+        Teleport()
+    end
+end)
+	
 --// HATCHING LOOP
 
 while isAlive(LocalPlayer) and LocalPlayer.Character.Parent and LocalPlayer.Character.Parent.Name == "Larvae" and not LocalPlayer.Character.Parent:FindFirstChild("Cocoon") do
@@ -333,7 +343,8 @@ while isAlive(LocalPlayer) and LocalPlayer.Character.Parent and LocalPlayer.Char
     }
     SpawnLarvaeRemote:FireServer(unpack(args))
 end
-
+cocooned = true
+	
 --// noclip
 if isAlive(LocalPlayer) then
 	LP.Character.Humanoid:ChangeState(11)
