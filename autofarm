@@ -236,7 +236,7 @@ end)
 --// SPAWNING LOOP
 
 while not isAlive(LocalPlayer) do
-    print("not alive")
+    --print("not alive")
     for _,antType in ipairs(antTypes) do
         local args = {
             [1] = {
@@ -248,7 +248,7 @@ while not isAlive(LocalPlayer) do
         coroutine.wrap(function() --spawn and wait bad blah blah blah whatever
             SpawnRemote:InvokeServer(unpack(args))
         end)()
-        print("invoked spawn")
+        --print("invoked spawn")
     end
     wait()
 end
