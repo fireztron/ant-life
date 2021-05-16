@@ -332,7 +332,7 @@ while isAlive(LocalPlayer) and LocalPlayer.Character.Parent and LocalPlayer.Char
     SpawnLarvaeRemote:FireServer(unpack(args))
 end
 
-//noclip
+--//noclip
 if isAlive(LocalPlayer) then
 	LP.Character.Humanoid:ChangeState(11)
 end
