@@ -268,7 +268,7 @@ end)
 
 --// HATCHING LOOP
 
-while isAlive(LocalPlayer) and LocalPlayer.Character.Parent.Name == "Larvae" and not LocalPlayer.Character.Parent:FindFirstChild("Cocoon") do
+while isAlive(LocalPlayer) and LocalPlayer.Character.Parent and LocalPlayer.Character.Parent.Name == "Larvae" and not LocalPlayer.Character.Parent:FindFirstChild("Cocoon") do
     wait()
     setCam() --incase camera glitches lol
     for plr, char in pairs(getChars(false)) do
