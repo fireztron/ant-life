@@ -315,11 +315,11 @@ while numOfChars() > 1 and isAlive(LocalPlayer) do --one to account for black ca
                 tpChar(CFrame.new((char.HumanoidRootPart.CFrame * offset).Position - Vector3.new(0,distanceUnder,0), char.HumanoidRootPart.Position))
 	    end
             setCam() --incase camera glitches lol
-            RS.RenderStepped:Wait()
+            RS.Stepped:Wait()
             --LocalPlayer.Character.HumanoidRootPart.Anchored = false
         end
     end
-    RS.RenderStepped:Wait()
+    RS.Stepped:Wait()
 end
 
 print('yuh')
