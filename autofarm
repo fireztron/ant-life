@@ -152,11 +152,13 @@ local function tpChar(cframe)
     LocalPlayer.Character.HumanoidRootPart.CFrame = cframe
 end
 
-local function getChars()
+local function getChars(accountForTeam)
     local chars = {}
     for _, plr in pairs(Players:GetPlayers()) do
-        if isAlive(plr) and isAlive(LocalPlayer) and plr.Character.Parent and plr.Character.Parent.Name ~= "Larvae" and plr.Character.Head.Color ~= LocalPlayer.Character.Head.Color then
-            chars[plr] = plr.Character
+        if isAlive(plr) and isAlive(LocalPlayer) and plr.Character.Parent and plr.Character.Parent.Name ~= "Larvae" then
+	    if (accountForTeam and plr.Character.Head.Color ~= LocalPlayer.Character.Head.Color) or not accountForTeam then
+            	chars[plr] = plr.Character
+	    end
         end
     end
     return chars
@@ -164,7 +166,7 @@ end
 
 local function numOfChars() --for some reason #dictionary always returns 0
 	local counter = 0 
-	for _, v in pairs(getChars()) do
+	for _, v in pairs(getChars(false)) do
 		counter =counter + 1
 	end
 	return counter
@@ -269,7 +271,7 @@ end)
 while isAlive(LocalPlayer) and LocalPlayer.Character.Parent.Name == "Larvae" and not LocalPlayer.Character.Parent:FindFirstChild("Cocoon") do
     wait()
     setCam() --incase camera glitches lol
-    for plr, char in pairs(getChars()) do
+    for plr, char in pairs(getChars(false)) do
         if isAlive(plr) and char.Parent and char.Parent.Name ~= "Larvae" and char:FindFirstChild("Carrier") then
 
             --// EGG GROWTH REMOTE
@@ -294,7 +296,7 @@ LP.Character.Humanoid:ChangeState(11)
 while numOfChars() > 1 and isAlive(LocalPlayer) do --one to account for black carpenter queen
     print(numOfChars())
     local LPChar = LocalPlayer.Character
-    for plr, char in pairs(getChars()) do
+    for plr, char in pairs(getChars(true)) do
         while isAlive(plr) and isAlive(LocalPlayer) and not char:IsDescendantOf(workspace.Carcasses) and char.Parent and char.Parent.Name ~= "Larvae" and LPChar.Parent and LPChar.Parent.Name ~= "Larvae" and char.Head.Color ~= LPChar.Head.Color do
             --LocalPlayer.Character.HumanoidRootPart.Anchored = true
             local offset = CFrame.new(0,0,1)
