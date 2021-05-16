@@ -1,5 +1,9 @@
 --made by fireztron @ v3rm
 
+repeat wait() until game:IsLoaded()
+
+if game.gameId == 943242049 then --ant life game id
+print("ok ant life v2 autofarm starting up")
 --// CHARWARS SERVER HOP SCRIPT:
 
 local PlaceID = game.PlaceId
@@ -364,3 +368,4 @@ print('yuh')
 
 -- //teleport da fuck outta there dood thers no more ants left
 Teleport()
+end
