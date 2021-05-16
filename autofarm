@@ -18,6 +18,8 @@ if not File then
     table.insert(AllIDs, actualHour)
     writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
 end
+
+local iterations = 0 --something i added myself
 function TPReturner()
     local Site;
     if foundAnything == "" then
@@ -30,6 +32,15 @@ function TPReturner()
         foundAnything = Site.nextPageCursor
     end
     local num = 0;
+    print"returning tp id"
+    if iterations > 500 then
+        local delFile = pcall(function()
+	    delfile("NotSameServers.json")
+            AllIDs = {}
+	    table.insert(AllIDs, actualHour)
+        end)
+    end
+    iterations = iterations + 1
     for i,v in pairs(Site.data) do
         local Possible = true
         ID = tostring(v.id)
@@ -64,21 +75,12 @@ function TPReturner()
     end
 end
 
-local iterations = 0 --something i added myself
+
 function Teleport()
     while wait() do
         pcall(function()
             TPReturner()
-	    iterations = iterations + 1
             if foundAnything ~= "" then
-	    	print"returning tp id"
-		if iterations > 500 then
-	    	    local delFile = pcall(function()
-			delfile("NotSameServers.json")
-			AllIDs = {}
-			table.insert(AllIDs, actualHour)
-		    end)
-	    	end
                 TPReturner()
             end
         end)
