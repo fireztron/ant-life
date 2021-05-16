@@ -111,7 +111,7 @@ coroutine.wrap(function() --apparently coroutine's better
                     }
 
                     game:GetService("ReplicatedStorage").Remotes.Bite:FireServer(unpack(args))
-                    print("firing", hum:GetFullName())
+                    --print("firing", hum:GetFullName())
                 end
             end
         end
