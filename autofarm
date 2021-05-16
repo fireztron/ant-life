@@ -65,24 +65,18 @@ function Teleport()
     while wait() do
         pcall(function()
             TPReturner()
-	    local delFile = pcall(function()
-	        delfile("NotSameServers.json")
-	        AllIDs = {}
-	        table.insert(AllIDs, actualHour)
-	    end)
+	    iterations = iterations + 1
             if foundAnything ~= "" then
 	    	print"returning tp id"
+		if iterations > 500 then
+	    	    local delFile = pcall(function()
+			delfile("NotSameServers.json")
+			AllIDs = {}
+			table.insert(AllIDs, actualHour)
+		    end)
+	    	end
                 TPReturner()
-		local delFile = pcall(function()
-		    delfile("NotSameServers.json")
-		    AllIDs = {}
-		    table.insert(AllIDs, actualHour)
-		end)
             end
-	    iterations = iterations + 1
-	    if iterations > 500 then
-	    	
-	    end
         end)
     end
 end
