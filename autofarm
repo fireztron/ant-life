@@ -81,6 +81,21 @@ function Teleport()
     end
 end
 
+--// AUTO KICK WHEN MOD JOINS
+
+game.Players.PlayerAdded:Connect(function(player)
+	if player:GetRankInGroup(4525406) > 50 then  --idk mod rank number so i just put 50
+		Teleport()
+	end
+end)
+
+for i,v in pairs(game.Players:GetPlayers()) do
+	if v:GetRankInGroup(4525406) > 50 then --idk mod rank number so i just put 50
+		Teleport()
+	end
+end
+
+
 --KILL AURA WITHOUT EGGS
 
 repeat wait() until game:IsLoaded()
