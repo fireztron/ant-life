@@ -166,7 +166,7 @@ end
 
 local function numOfChars() --for some reason #dictionary always returns 0
 	local counter = 0 
-	for _, v in pairs(getChars(false)) do
+	for _, v in pairs(getChars(true)) do
 		counter =counter + 1
 	end
 	return counter
