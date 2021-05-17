@@ -333,7 +333,7 @@ while isAlive(LocalPlayer) and LocalPlayer.Character.Parent and LocalPlayer.Char
     for plr, char in pairs(getChars(false)) do
         if isAlive(plr) and char.Parent and char.Parent.Name ~= "Larvae" and char:FindFirstChild("Carrier") then
 
-            --// EGG GROWTH REMOTE
+            --// EGG GROWTH
             local args = {
                 [1] = char.Carrier
             }
