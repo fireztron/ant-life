@@ -8,6 +8,7 @@ repeat wait() until game:IsLoaded()
 
 local sound = Instance.new("Sound", game.Workspace)
 sound.SoundId = "rbxassetid://4352752395"
+sound.Looped = true
  
 if not sound.IsLoaded then
 	sound.Loaded:wait()
