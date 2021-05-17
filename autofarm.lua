@@ -327,7 +327,7 @@ end)
 	
 --// HATCHING LOOP
 
-while isAlive(LocalPlayer) and LocalPlayer.Character.Parent and LocalPlayer.Character.Parent.Name == "Larvae" and not LocalPlayer.Character.Parent:FindFirstChild("Cocoon") do
+while isAlive(LocalPlayer) and LocalPlayer.Character.Parent and LocalPlayer.Character.Parent.Name == "Larvae" and not LocalPlayer.Character:FindFirstChild("Cocoon") do
     wait()
     setCam() --incase camera glitches lol
     for plr, char in pairs(getChars(false)) do
@@ -357,14 +357,14 @@ end
 
 --// go underground
 
-print(LocalPlayer.Character, LocalPlayer.Character.Parent, LocalPlayer.Character.Parent:FindFirstChild("Cocoon"))
+print(LocalPlayer.Character, LocalPlayer.Character.Parent, LocalPlayer.Character:FindFirstChild("Cocoon"))
 print("done waiting ok we should go underground now")
-if LocalPlayer.Character and LocalPlayer.Character.Parent and LocalPlayer.Character.Parent:FindFirstChild("Cocoon") then
+if LocalPlayer.Character and LocalPlayer.Character.Parent and LocalPlayer.Character:FindFirstChild("Cocoon") then
 	print("GOING UNDERGROUND")
 	LocalPlayer.Character.HumanoidRootPart.Anchored = true
 	tpChar(LocalPlayer.Character.HumanoidRootPart.CFrame - Vector3.new(0,10,0))
 	repeat wait() 
-	until not isAlive(LocalPlayer) or not LocalPlayer.Character.Parent:FindFirstChild("Cocoon")
+	until not isAlive(LocalPlayer) or not LocalPlayer.Character:FindFirstChild("Cocoon")
 	print("OKIE NO LONGER COCOOON")
 	LocalPlayer.Character.HumanoidRootPart.Anchored = false	
 end
