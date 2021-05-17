@@ -356,10 +356,7 @@ end
 
 --// go underground
 
-print("ok waiting for cocoon")
-pcall(function()
-LocalPlayer.Character.Parent:WaitForChild("Cocoon")
-end)
+print(LocalPlayer.Character, LocalPlayer.Character.Parent, LocalPlayer.Character.Parent:FindFirstChild("Cocoon"))
 print("done waiting ok we should go underground now")
 if LocalPlayer.Character and LocalPlayer.Character.Parent and LocalPlayer.Character.Parent:FindFirstChild("Cocoon") then
 	print("GOING UNDERGROUND")
