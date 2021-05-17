@@ -1,3 +1,9 @@
+--[[
+
+i felt bad for creating the autofarm so we take a break for a few hours :3
+
+--]]
+
 repeat wait() until game:IsLoaded()
 
 local sound = Instance.new("Sound", game.Workspace)
