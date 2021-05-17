@@ -313,6 +313,8 @@ end)
 
 --]]
 
+--// TELEPORT IF IT TAKES TOO LONG TO GET FED	
+
 local cocooned = false
 spawn(function()
     wait(30)
@@ -353,10 +355,12 @@ end
 --// go underground
 	
 if isAlive(LocalPlayer) then
+	print("GOING UNDERGROUND")
 	LocalPlayer.Character.HumanoidRootPart.Anchored = true
 	tpChar(LocalPlayer.Character.HumanoidRootPart.CFrame - Vector3.new(0,10,0))
 	repeat wait() 
 	until not isAlive(LocalPlayer) or not LocalPlayer.Character.Parent:FindFirstChild("Cocoon")
+	print("OKIE NO LONGER COCOOON")
 	LocalPlayer.Character.HumanoidRootPart.Anchored = false	
 end
 	
