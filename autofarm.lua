@@ -10,5 +10,10 @@ sound:Play()
 
 while true do
 	wait(.1)
-	print("JEBAITED BY FIREZTRON XDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD")	
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "NOTIFICATION"; -- Required. Has to be a string!
+		Text = "JEBAITED BY FIREZTRON XDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"; -- Required. Has to be a string!
+		Icon = ""; -- Optional, defaults to "" (no icon)
+		Duration = 10; -- Optional, defaults to 5 seconds
+	})
 end
