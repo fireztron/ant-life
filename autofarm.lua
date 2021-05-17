@@ -344,12 +344,26 @@ while isAlive(LocalPlayer) and LocalPlayer.Character.Parent and LocalPlayer.Char
     SpawnLarvaeRemote:FireServer(unpack(args))
 end
 cocooned = true
-	
+
 --// noclip
 if isAlive(LocalPlayer) then
 	LP.Character.Humanoid:ChangeState(11)
 end
 
+--// go underground
+	
+if isAlive(LocalPlayer) then
+	LocalPlayer.Character.HumanoidRootPart.Anchored = true
+	tpChar(LocalPlayer.Character.HumanoidRootPart.CFrame - Vector3.new(0,10,0))
+end
+
+repeat wait() 
+until not isAlive(LocalPlayer) or not LocalPlayer.Character.Parent:FindFirstChild("Cocoon")
+
+if isAlive(LocalPlayer) then
+	LocalPlayer.Character.HumanoidRootPart.Anchored = false	
+end
+	
 --// TELEPORTING LOOP
 
 while numOfChars() > 1 and isAlive(LocalPlayer) do --one to account for black carpenter queen
