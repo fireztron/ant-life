@@ -365,7 +365,9 @@ if LocalPlayer.Character and LocalPlayer.Character.Parent and LocalPlayer.Charac
 	repeat RS.Heartbeat:Wait()
 	until not isAlive(LocalPlayer) or not LocalPlayer.Character:FindFirstChild("Cocoon")
 	print("OKIE NO LONGER COCOOON")
-	LocalPlayer.Character.HumanoidRootPart.Anchored = false	
+	if isAlive(LocalPlayer) then
+		LocalPlayer.Character.HumanoidRootPart.Anchored = false	
+	end
 end
 	
 --// TELEPORTING LOOP
