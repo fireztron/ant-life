@@ -355,12 +355,8 @@ end
 if isAlive(LocalPlayer) then
 	LocalPlayer.Character.HumanoidRootPart.Anchored = true
 	tpChar(LocalPlayer.Character.HumanoidRootPart.CFrame - Vector3.new(0,10,0))
-end
-
-repeat wait() 
-until not isAlive(LocalPlayer) or not LocalPlayer.Character.Parent:FindFirstChild("Cocoon")
-
-if isAlive(LocalPlayer) then
+	repeat wait() 
+	until not isAlive(LocalPlayer) or not LocalPlayer.Character.Parent:FindFirstChild("Cocoon")
 	LocalPlayer.Character.HumanoidRootPart.Anchored = false	
 end
 	
