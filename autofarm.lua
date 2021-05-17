@@ -404,6 +404,14 @@ end
 
 print('yuh')
 
+--go underground while tryna teleport
+	
+if isAlive(LocalPlayer) then
+	print("GOING UNDERGROUND")
+	LocalPlayer.Character.HumanoidRootPart.Anchored = true
+	tpChar(CFrame.new(LocalPlayer.Character.HumanoidRootPart.Position.X , LocalPlayer.Character.HumanoidRootPart.Position.Y-20, LocalPlayer.Character.HumanoidRootPart.Position.Z)) --could be shorter but i changed my mind
+end
+	
 -- //teleport da fuck outta there dood thers no more ants left
 Teleport()
 end
