@@ -1,5 +1,7 @@
 --made by fireztron @ v3rm
 
+--hi telygum ik u reading this :3
+
 repeat wait() until game:IsLoaded()
 
 if game.gameId == 943242049 then --ant life game id
