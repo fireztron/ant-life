@@ -6,6 +6,8 @@ i felt bad for creating the autofarm so we take a break for a few hours :3
 
 repeat wait() until game:IsLoaded()
 
+if game.gameId == 943242049 then --ant life game id
+
 local sound = Instance.new("Sound", game.Workspace)
 sound.SoundId = "rbxassetid://4352752395"
 sound.Looped = true
@@ -30,4 +32,5 @@ while true do
 		Duration = 10; -- Optional, defaults to 5 seconds
 	})
 	print("KAPPA OUTDATED | POG CHAMP OVERRATED | LONG HAVE WE WAITED | NOW WE JEBAITED")
+end
 end
