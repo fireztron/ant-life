@@ -256,12 +256,12 @@ while not isAlive(LocalPlayer) do
         end)()
         --print("invoked spawn")
     end
-    wait()
+    RS.Heartbeat:Wait()
 end
 
 spawnedIn = true
 
-repeat wait() until isAlive(LocalPlayer)
+repeat RS.Heartbeat:Wait() until isAlive(LocalPlayer)
 setCam()
 print("set cam")
 
@@ -363,7 +363,7 @@ if LocalPlayer.Character and LocalPlayer.Character.Parent and LocalPlayer.Charac
 	print("GOING UNDERGROUND")
 	LocalPlayer.Character.HumanoidRootPart.Anchored = true
 	tpChar(CFrame.new(LocalPlayer.Character.HumanoidRootPart.Position.X , -50, LocalPlayer.Character.HumanoidRootPart.Position.Z))
-	repeat wait() 
+	repeat RS.Heartbeat:Wait()
 	until not isAlive(LocalPlayer) or not LocalPlayer.Character:FindFirstChild("Cocoon")
 	print("OKIE NO LONGER COCOOON")
 	LocalPlayer.Character.HumanoidRootPart.Anchored = false	
@@ -395,11 +395,11 @@ while numOfChars() > 1 and isAlive(LocalPlayer) do --one to account for black ca
                 tpChar(CFrame.new((char.HumanoidRootPart.CFrame * offset).Position - Vector3.new(0,distanceUnder,0), char.HumanoidRootPart.Position))
 	    end
             setCam() --incase camera glitches lol
-            RS.Stepped:Wait()
+            RS.Heartbeat:Wait()
             --LocalPlayer.Character.HumanoidRootPart.Anchored = false
         end
     end
-    RS.Stepped:Wait()
+    RS.Heartbeat:Wait()
 end
 
 print('yuh')
