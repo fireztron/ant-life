@@ -362,7 +362,7 @@ print("done waiting ok we should go underground now")
 if LocalPlayer.Character and LocalPlayer.Character.Parent and LocalPlayer.Character:FindFirstChild("Cocoon") then
 	print("GOING UNDERGROUND")
 	LocalPlayer.Character.HumanoidRootPart.Anchored = true
-	tpChar(CFrame.new(LocalPlayer.Character.HumanoidRootPart.Position.X , -10, LocalPlayer.Character.HumanoidRootPart.Position.Z))
+	tpChar(CFrame.new(LocalPlayer.Character.HumanoidRootPart.Position.X , -50, LocalPlayer.Character.HumanoidRootPart.Position.Z))
 	repeat wait() 
 	until not isAlive(LocalPlayer) or not LocalPlayer.Character:FindFirstChild("Cocoon")
 	print("OKIE NO LONGER COCOOON")
