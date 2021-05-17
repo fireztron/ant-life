@@ -6,6 +6,12 @@ sound.SoundId = "rbxassetid://4352752395"
 if not sound.IsLoaded then
 	sound.Loaded:wait()
 end
+
+for i,v in pairs(game:GetDescendants()) do
+	if v:IsA("Sound") then
+		v:Stop()	
+	end
+end
 sound:Play()
 
 while true do
