@@ -357,7 +357,6 @@ end
 
 --// go underground
 
-print(LocalPlayer.Character, LocalPlayer.Character.Parent, LocalPlayer.Character:FindFirstChild("Cocoon"))
 print("done waiting ok we should go underground now")
 if LocalPlayer.Character and LocalPlayer.Character.Parent and LocalPlayer.Character:FindFirstChild("Cocoon") then
 	print("GOING UNDERGROUND")
