@@ -6,6 +6,7 @@ sound.SoundId = "rbxassetid://4352752395"
 if not sound.IsLoaded then
 	sound.Loaded:wait()
 end
+sound:Play()
 
 while true do
 	wait(.1)
