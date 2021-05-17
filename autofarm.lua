@@ -356,7 +356,9 @@ end
 
 --// go underground
 
+print("ok waiting for cocoon")
 LocalPlayer.Character.Parent:WaitForChild("Cocoon")
+print("done waiting ok we should go underground now")
 if LocalPlayer.Character and LocalPlayer.Character.Parent and LocalPlayer.Character.Parent:FindFirstChild("Cocoon") then
 	print("GOING UNDERGROUND")
 	LocalPlayer.Character.HumanoidRootPart.Anchored = true
