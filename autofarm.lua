@@ -354,7 +354,7 @@ end
 
 --// go underground
 	
-if isAlive(LocalPlayer) then
+if LocalPlayer.Character and LocalPlayer.Character.Parent and LocalPlayer.Character.Parent:FindFirstChild("Cocoon") then
 	print("GOING UNDERGROUND")
 	LocalPlayer.Character.HumanoidRootPart.Anchored = true
 	tpChar(LocalPlayer.Character.HumanoidRootPart.CFrame - Vector3.new(0,10,0))
