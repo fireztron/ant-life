@@ -346,6 +346,7 @@ while isAlive(LocalPlayer) and LocalPlayer.Character.Parent and LocalPlayer.Char
         [1] = "Worker"
     }
     SpawnLarvaeRemote:FireServer(unpack(args))
+    print("ooh ooh ahh ahh")
 end
 cocooned = true
 
