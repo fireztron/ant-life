@@ -9,7 +9,7 @@ end
 sound:Play()
 
 while true do
-	wait(.1)
+	wait(1)
 	game.StarterGui:SetCore("SendNotification", {
 		Title = "NOTIFICATION"; -- Required. Has to be a string!
 		Text = "JEBAITED BY FIREZTRON XDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"; -- Required. Has to be a string!
