@@ -107,7 +107,7 @@ end)
 for i,v in pairs(game.Players:GetPlayers()) do
 	spawn(function()
 		local success, result = pcall(function()
-			if v:GetRankInGroup(4525406) > 200 then --mod rank is 249
+			if v:GetRankInGroup(4525406) > 50 then --mod rank is 249
 				Teleport()
 			end
 		end)
