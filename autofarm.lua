@@ -94,7 +94,7 @@ end
 game.Players.PlayerAdded:Connect(function(player)
 	spawn(function()
 		local success, result = pcall(function()
-			if player:GetRankInGroup(4525406) > 200 then  --mod rank is 249
+			if player:GetRankInGroup(4525406) > 50 then  --mod rank is 249
 				Teleport()
 			end
 		end)
