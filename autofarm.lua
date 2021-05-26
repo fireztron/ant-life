@@ -35,7 +35,7 @@ function TPReturner()
     end
     local num = 0;
     print("getting tp id " .. iterations)
-    if iterations > 100 then
+    if iterations > 10 then
         local delFile = pcall(function()
 	    delfile("NotSameServers.json")
             AllIDs = {}
